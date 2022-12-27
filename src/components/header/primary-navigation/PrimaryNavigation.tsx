@@ -1,12 +1,19 @@
-import * as React from 'react';
+// Const
+import { primaryLinks } from './primary-links';
 
-export interface Props {
-}
+export default function PrimaryNavigation() {
+  const listLinks = primaryLinks.map((link) =>
+  <li key={link.id}>
+    <a href={link.link}>{link.name}</a>
+  </li>
+  );
 
-export default function PrimaryNavigation (props: Props) {
   return (
-    <div>
-
+    <div className="">
+      <ul className="">
+        <li><a>Browse</a></li>
+      {listLinks}
+      </ul>
     </div>
   );
 }

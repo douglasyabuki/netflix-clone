@@ -1,14 +1,9 @@
 import * as React from 'react';
 
-interface Props {
-  src: string;
-  alt: string;
-}
-
-export default function Logo ({src, alt}: Props) {
+export default function Logo () {
   return (
-    <div>
-
+    <div className="relative h-60 m-h-67 w-40">
+      <img src="/nflogo.png" alt="Netflix logo" className="contain h-auto w-auto"/>
     </div>
   );
 }
