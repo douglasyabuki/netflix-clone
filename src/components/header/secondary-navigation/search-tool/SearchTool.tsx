@@ -7,7 +7,7 @@ export default function SearchTool() {
   };
 
   return (
-    <div className="invisible relative flex w-6 min-w-min items-center justify-center sm:visible">
+    <div className="invisible relative flex w-6 min-w-min items-center justify-center md:visible">
       <i
         role={'button'}
         onClick={onClickHandler}
