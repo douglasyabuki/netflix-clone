@@ -1,12 +1,7 @@
-import * as React from 'react';
-
-interface Props {
-}
-
-export default function Notifications (props: Props) {
+export default function Notifications () {
   return (
-    <div>
-
+    <div className="flex justify-center items-center">
+      <i className="material-icons text-2xl h-min">notifications</i>
     </div>
   );
 }

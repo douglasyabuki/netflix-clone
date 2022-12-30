@@ -8,7 +8,7 @@ import MainView from './components/main-view/MainView';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Header></Header>
-    <main className="flex h-screen w-screen flex-col items-center justify-center bg-slate-400">
+    <main className="font-sans flex h-screen w-screen flex-col items-center justify-center bg-slate-400">
       <MainView></MainView>
       <span className="text-2xl text-netflix-white-font">Vite + React + TS + TailwindCSS</span>
     </main>

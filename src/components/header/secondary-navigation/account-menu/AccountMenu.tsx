@@ -1,12 +1,9 @@
-import * as React from 'react';
+import Avatar from './avatar/Avatar';
 
-interface Props {
-}
-
-export default function AccountMenu (props: Props) {
+export default function AccountMenu() {
   return (
     <div>
-
+        <Avatar></Avatar>
     </div>
   );
 }
