@@ -35,7 +35,7 @@ export default function PrimaryNavigation() {
         </li>
         {isActive ? (
           <div
-            className="container absolute left-0 mt-4 flex h-60 w-fit flex-col items-center justify-between border-t-4 border-t-netflix-white-font bg-netflix-black opacity-80 py-4 px-24"
+            className="container absolute left-0 mt-4 flex h-60 w-fit flex-col items-center justify-between border-t-2 border-t-netflix-white-font bg-netflix-black opacity-80 py-4 px-24"
             onMouseLeave={() => setIsActive(false)}
           >
             {listLinks}
