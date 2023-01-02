@@ -2,25 +2,36 @@
 import { primaryLinks } from './primary-links';
 
 // Hooks
-import React, { useState } from 'react';
+import { useState } from 'react';
 
+// Primary Navigation (routing links) main function
 export default function PrimaryNavigation() {
+
+  // Declaring and setting initial value to the hidden links state
   const [isActive, setIsActive] = useState<boolean>(false);
-  const onClickHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
+
+  // Function to show or hide the links menu
+  const onClickHandler = () => {
     setIsActive(!isActive);
   };
 
+  // Maps the list of links into a HTML List Element
   const listLinks = primaryLinks.map((link) => (
     <li className="lg:flex-box px-3 hover:opacity-75" key={link.id}>
       <a href={link.link}>{link.name}</a>
     </li>
   ));
 
+  // Returns the links to be rendered by Header.tsx
   return (
-    <div className="container mx-0 m-auto flex flex-wrap items-center justify-between px-4">
+    <div className="container m-auto mx-0 flex flex-wrap items-center justify-between px-4">
       <ul className="block lg:flex">
-        <li className="center inline-flex lg:hidden">
-          <a role="button" className="relative text-xsmall font-medium sm:text-base" onClick={onClickHandler}>
+        <li className="center inline-flex items-center lg:hidden">
+          <a
+            role="button"
+            className="relative text-xsmall font-medium sm:text-base"
+            onClick={onClickHandler}
+          >
             Browse
           </a>
           <i
@@ -35,13 +46,13 @@ export default function PrimaryNavigation() {
         </li>
         {isActive ? (
           <div
-            className="container absolute left-0 mt-4 flex h-60 w-fit flex-col items-center justify-between border-t-2 border-t-netflix-white-font bg-netflix-black opacity-80 py-4 px-24"
+            className="container absolute left-0 mt-4 flex h-60 w-fit flex-col items-center justify-between border-t-2 border-t-netflix-white-font bg-netflix-black py-4 px-24 opacity-80"
             onMouseLeave={() => setIsActive(false)}
           >
             {listLinks}
           </div>
         ) : (
-          <div className="hidden text-xs lg:flex xl:text-sm 2xl:text-md">{listLinks}</div>
+          <div className="2xl:text-md hidden text-xs lg:flex xl:text-sm">{listLinks}</div>
         )}
       </ul>
     </div>

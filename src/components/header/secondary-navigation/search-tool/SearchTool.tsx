@@ -1,13 +1,20 @@
+// Hooks
 import React, { useState } from 'react';
 
+// Search Tool main function
 export default function SearchTool() {
+
+  // Declaring state and setting its initial value
   const [expandSearch, setExpandSearch] = useState<boolean>(false);
+
+  // Whenever the user clicks the icon, the state of expandSearch will be updated
   const onClickHandler: React.MouseEventHandler = () => {
     setExpandSearch(!expandSearch);
   };
 
+  // Returns the icon(button) to SecondaryNavigation.tsx
   return (
-    <div className="hidden relative w-6 min-w-min items-center justify-center sm:flex">
+    <div className="relative hidden w-6 min-w-min items-center justify-center sm:flex">
       <i
         role={'button'}
         onClick={onClickHandler}

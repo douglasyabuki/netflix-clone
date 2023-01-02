@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        xsmall: ['.6rem','auto'],
+        xsmall: ['.6rem','.9rem'],
       },
       colors: {
         'netflix-white-font' : "#e5e5e5",

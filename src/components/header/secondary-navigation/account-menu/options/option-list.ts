@@ -1,9 +1,11 @@
-export interface IOptions {
+// Interface of the object Options
+interface IOptions {
   id: number;
   icon: string;
   title: string;
 }
 
+// Exports the list of user profiles
 export const profileList: IOptions[] = [
   { id: 0, icon: '/avatar-penguin.png', title: 'Pingu, the penguin' },
   { id: 1, icon: '/avatar-jinx.png', title: 'Jinx' },
@@ -11,6 +13,7 @@ export const profileList: IOptions[] = [
   // { id: 3, icon: '/avatar-cookie.png', title: 'Just some cookie' }
 ]
 
+// Exports the list of setting options
 export const optionList: IOptions[] = [
   { id: 0, icon: 'edit', title: 'Manage Profiles' },
   { id: 1, icon: 'co_present', title: 'Transfer Profile' },
