@@ -7,10 +7,10 @@ import MainView from './components/main-view/MainView';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Header></Header>
-    <main className="font-sans flex h-screen w-screen flex-col items-center justify-center bg-slate-400">
+    <main className="inline-flex h-full flex-col bg-netflix-black font-sans text-netflix-white-font">
+      <Header></Header>
       <MainView></MainView>
+      <Footer></Footer>
     </main>
-    <Footer></Footer>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

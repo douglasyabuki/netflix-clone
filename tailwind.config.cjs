@@ -4,13 +4,17 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        xsmall: ['.6rem','.9rem'],
+        xsmall: ['.6rem', '.9rem'],
       },
       colors: {
-        'netflix-white-font' : "#e5e5e5",
-        'navbar-color' : '#00000070',
-        'transparent-color' : '#00000000',
-        'netflix-black': '#141414'
+        'netflix-white-font': '#e5e5e5',
+        'navbar-color': '#00000070',
+        'transparent-color': '#00000000',
+        'netflix-black': '#141414',
+        'netflix-gray' : '#6d6d6eb3'
+      },
+      container: {
+        center: true,
       }
     },
   },

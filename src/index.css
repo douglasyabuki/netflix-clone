@@ -4,6 +4,10 @@
 
 body,
 #root {
+  @apply h-full;
+  margin: 0;
+  box-sizing: border-box;
   display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
