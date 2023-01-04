@@ -36,7 +36,7 @@ export default function MainView() {
       <div className="relative items-center">
         {onBoard ? <MainBoard onBoard={onBoard}></MainBoard> : null}
         </div>
-      <div className="relative items-center group">
+      <div className="relative z-20 -top-4 lg:px-12 items-center group backdrop-blur-md bg-gradient-to-b from-transparent-color to-netflix-black">
         {movieList !== ([])
           ? movieList.map((item, key) => (
               <MovieRow key={key} title={item.title} items={item.items}></MovieRow>

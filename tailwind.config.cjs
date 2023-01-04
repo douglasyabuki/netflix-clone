@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       screens: {
         'xs': '480px',
+        '3xl' : '2000px',
+        '4xl' : '2400px'
       },
       fontSize: {
         xsmall: ['.6rem', '.9rem'],
@@ -15,6 +17,7 @@ module.exports = {
         'netflix-white-font': '#e5e5e5',
         'navbar-color': '#00000070',
         'transparent-color': '#00000000',
+        'transparent-black': '#14141480',
         'netflix-black': '#141414',
         'netflix-gray' : '#6d6d6eb3'
       },

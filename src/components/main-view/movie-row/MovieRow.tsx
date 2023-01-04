@@ -1,8 +1,10 @@
 // Components
 import MovieCard from './movie-card/MovieCard';
+import SlideLeft from './slide-left/SlideLeft';
 
 // Hooks
 import { useRef, useState } from 'react';
+import SlideRight from './slide-right/SlideRight';
 
 // Props destructuring
 export interface Props {
@@ -28,33 +30,17 @@ export default function MovieRow({ title, items }: Props) {
       <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition-colors duration-200 hover:text-white md:text-2xl">
         {title}
       </h2>
-      <div className="group relative md:-ml-2">
-        <i
-          className={`material-icons absolute top-0 bottom-0 left-2 z-40 m-auto h-full scale-90 w-4 cursor-pointer text-center bg-netflix-black opacity-0 transition hover:scale-100 group-hover:opacity-100 ${
-            !isMoved && 'hidden'
-          }`}
-          role={'button'}
-          onClick={() => handleClick('left')}
-        >
-          arrow_back_ios
-        </i>
+      <div className="group container relative px-4">
+        <SlideLeft onClickHandler={() => handleClick('left')}></SlideLeft>
+        <SlideRight onClickHandler={() => handleClick('right')}></SlideRight>
         <div
           ref={rowRef}
-          className="flex max-w-6xl items-center space-x-0.5 overflow-x-auto xs:scrollbar-hide md:space-x-2.5
-          md:p-2"
+          className="flex items-center space-x-0.5 overflow-x-scroll xs-max-w-[300px] xs:scrollbar-hide sm:max-w-[600px] md:max-w-6xl md:space-x-2.5 md:p-2 lg:max-w-[1000px] xl:max-w-[1200px] 2xl:max-w-[1500px] 3xl:max-w-[1900px] 4xl:max-w-full"
         >
           {items.results.map((item) => (
             <MovieCard item={item}></MovieCard>
           ))}
         </div>
-
-        <i
-          className="material-icons absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100"
-          role={'button'}
-          onClick={() => handleClick('right')}
-        >
-          arrow_forward_ios
-        </i>
       </div>
     </div>
   );
