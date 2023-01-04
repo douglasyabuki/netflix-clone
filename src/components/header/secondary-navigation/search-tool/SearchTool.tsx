@@ -1,14 +1,27 @@
 // Hooks
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 // Search Tool main function
 export default function SearchTool() {
   // Declaring state and setting its initial value
   const [expandSearch, setExpandSearch] = useState<boolean>(false);
+  const timeout = useRef(null);
 
   // Whenever the user clicks the icon, the state of expandSearch will be updated
   const onClickHandler: React.MouseEventHandler = () => {
     setExpandSearch(!expandSearch);
+  };
+
+  // Function to set a timer to hide menu onMouseLeave
+  const onMouseLeaveHandler = () => {
+    timeout.current = setTimeout(() => {
+      setExpandSearch(false);
+    }, 500);
+  };
+
+  // Function to reset the timer onMouseEnter
+  const onMouseEnterHandler = () => {
+    clearTimeout(timeout.current);
   };
 
   // Returns the icon(button) to SecondaryNavigation.tsx
@@ -22,7 +35,8 @@ export default function SearchTool() {
         search
       </i>
       <input
-        onMouseLeave={() => setExpandSearch(false)}
+        onMouseLeave={onMouseLeaveHandler}
+        onMouseEnter={onMouseEnterHandler}
         className={
           !expandSearch
             ? 'w-0 opacity-0'

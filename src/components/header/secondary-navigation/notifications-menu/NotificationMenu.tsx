@@ -3,13 +3,14 @@ import { notificationNumber } from './notifications/notification-list';
 import Notifications from './notifications/Notifications';
 
 // Hooks
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 // Notification menu main function
 export default function NotificationMenu() {
   // Setting initial values and declaring states
   const [isActive, setIsActive] = useState<boolean>(false);
   const [numberOfNotifications, setNumberOfNotifications] = useState<number>(notificationNumber);
+  const timeout = useRef(null);
 
   // When the user clicks the notification div, it renders the Notification.tsx component
   const onClickHandler = () => {
@@ -17,10 +18,23 @@ export default function NotificationMenu() {
     setNumberOfNotifications(0);
   };
 
+  // Function to set a timer to hide menu onMouseLeave
+  const onMouseLeaveHandler = () => {
+    timeout.current = setTimeout(() => {
+      setIsActive(false);
+    }, 500);
+  };
+
+  // Function to reset the timer onMouseEnter
+  const onMouseEnterHandler = () => {
+    clearTimeout(timeout.current);
+  };
+
   // Returns the notification icon (button) and menu to SecondaryNavigation.tsx
   return (
     <div
-      onMouseLeave={() => setIsActive(false)}
+      onMouseLeave={onMouseLeaveHandler}
+      onMouseEnter={onMouseEnterHandler}
       onClick={onClickHandler}
       className="block cursor-pointer items-center justify-center"
     >

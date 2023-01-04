@@ -2,16 +2,29 @@
 import { primaryLinks } from './primary-links';
 
 // Hooks
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 // Primary Navigation (routing links) main function
 export default function PrimaryNavigation() {
   // Declaring and setting initial value to the hidden links state
   const [isActive, setIsActive] = useState<boolean>(false);
+  const timeout = useRef(null);
 
   // Function to show or hide the links menu
   const onClickHandler = () => {
     setIsActive(!isActive);
+  };
+
+  // Function to set a timer to hide menu onMouseLeave
+  const onMouseLeaveHandler = () => {
+    timeout.current = setTimeout(() => {
+      setIsActive(false);
+    }, 500);
+  };
+
+  // Function to reset the timer onMouseEnter
+  const onMouseEnterHandler = () => {
+    clearTimeout(timeout.current);
   };
 
   // Maps the list of links into a HTML List Element
@@ -46,7 +59,8 @@ export default function PrimaryNavigation() {
         {isActive ? (
           <div
             className="container absolute left-0 mt-4 flex h-60 w-fit flex-col items-center justify-between border-t-2 border-t-netflix-white-font bg-netflix-black py-4 px-24 opacity-80"
-            onMouseLeave={() => setIsActive(false)}
+            onMouseLeave={onMouseLeaveHandler}
+            onMouseEnter={onMouseEnterHandler}
           >
             {listLinks}
           </div>
