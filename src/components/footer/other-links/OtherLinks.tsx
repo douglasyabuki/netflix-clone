@@ -10,7 +10,7 @@ interface Props {
 export default function OtherLinks({ list }: Props) {
   // Returns mapped link list to be rendered by Footer.tsx
   return (
-    <div className="grid-cols-2 space-y-2 px-4 text-justify">
+    <div className="columns-2 space-y-2 px-4 text-justify md:columns-4">
       {list
         ? list.map((item) => (
             <div>

@@ -13,7 +13,7 @@ export default function Footer() {
 
   // Returns the whole footer to App.tsx
   return (
-    <footer className="relative inset-x-0 h-auto w-screen text-center text-netflix-gray-footer">
+    <footer className="relative inset-x-0 h-auto w-screen text-center text-netflix-gray-footer sm:px-5 lg:px-28 xl:px-52 2xl:px-96 3xl:container 3xl:max-w-[1800px]">
       <SocialLinks iconList={socialLinksList}></SocialLinks>
       <OtherLinks list={otherLinksList}></OtherLinks>
       <FooterButton content={'Service Code'} onClickHandler={() => null}></FooterButton>
