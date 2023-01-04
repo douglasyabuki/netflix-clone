@@ -3,8 +3,13 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       fontSize: {
         xsmall: ['.6rem', '.9rem'],
+        xsmaller: ['.45rem', '.62rem'],
+        xsmallest: ['.3rem', '.45rem']
       },
       colors: {
         'netflix-white-font': '#e5e5e5',
@@ -18,5 +23,5 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 };
