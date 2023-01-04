@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 
 // Search Tool main function
 export default function SearchTool() {
-
   // Declaring state and setting its initial value
   const [expandSearch, setExpandSearch] = useState<boolean>(false);
 

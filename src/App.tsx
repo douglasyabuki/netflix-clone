@@ -1,9 +1,14 @@
+// React
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import Header from './components/header/Header';
+
+// Components
 import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
 import MainView from './components/main-view/MainView';
+
+// Styling
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -13,4 +18,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <Footer></Footer>
     </main>
   </React.StrictMode>,
-)
+);

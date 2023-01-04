@@ -1,8 +1,7 @@
-import * as React from 'react';
+// Play Button main function
+export default function PlayButton() {
 
-export interface IPlayButtonProps {}
-
-export default function PlayButton(props: IPlayButtonProps) {
+  // Returns the button "Play" to MainBoard.tsx
   return (
     <div className="">
       <button className="text-md h-5 w-14 flex items-center justify-center rounded-md bg-netflix-white-font text-xsmall font-semibold text-netflix-black hover:opacity-80 xs:h-7 xs:w-16 lg:h-14 lg:w-36 lg:gap-2 lg:text-xl">

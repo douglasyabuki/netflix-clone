@@ -1,6 +1,3 @@
-// Hooks
-import React from 'react';
-
 // Props destructuring
 interface Props {
   isActive: boolean;

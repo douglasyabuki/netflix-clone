@@ -19,7 +19,8 @@ module.exports = {
         'transparent-color': '#00000000',
         'transparent-black': '#14141480',
         'netflix-black': '#141414',
-        'netflix-gray' : '#6d6d6eb3'
+        'netflix-gray' : '#6d6d6eb3',
+        'netflix-gray-footer' : '#808080',
       },
       container: {
         center: true,

@@ -13,7 +13,7 @@ interface IHomeItem {
   items: Awaited<ReturnType<typeof fetchData>>
 }
 
-export async function getHomeList():Promise<IHomeItem[]> {
+export async function getHomeList(): Promise<IHomeItem[]> {
   return [
     {
       slug: 'originals',
@@ -63,7 +63,7 @@ export async function getDetails(tv_id: number) {
   return details;
 }
 
-export async function getVideosDetails(tv_id: number){
+export async function getVideosDetails(tv_id: number) {
   let details = await fetchData(`/tv/${tv_id}?api_key=${API_KEY}&append_to_response=videos`)
   return details;
 }

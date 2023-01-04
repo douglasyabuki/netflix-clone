@@ -1,8 +1,12 @@
+// Props destructuring
 export interface Props {
   onClickHandler: React.MouseEventHandler<HTMLElement>;
 }
 
+// SlideLeft main function
 export default function SlideLeft({ onClickHandler }: Props) {
+
+  // Returns the button responsible for sliding the carousel to the left on MovieRow.tsx
   return (
     <div
       onClick={onClickHandler}

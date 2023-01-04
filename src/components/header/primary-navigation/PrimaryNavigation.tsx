@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 // Primary Navigation (routing links) main function
 export default function PrimaryNavigation() {
-
   // Declaring and setting initial value to the hidden links state
   const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -29,8 +28,8 @@ export default function PrimaryNavigation() {
         <li className="center inline-flex items-center lg:hidden">
           <a
             role="button"
-            className="relative text-xsmall font-medium sm:text-base"
             onClick={onClickHandler}
+            className="relative text-xsmall font-medium sm:text-base"
           >
             Browse
           </a>

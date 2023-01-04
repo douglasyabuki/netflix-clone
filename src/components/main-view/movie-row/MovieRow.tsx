@@ -12,10 +12,14 @@ export interface Props {
   items: any;
 }
 
+// MovieRow main function
 export default function MovieRow({ title, items }: Props) {
-  const rowRef = useRef<HTMLDivElement>(null);
-  const [isMoved, setIsMoved] = useState(false);
 
+  // Setting hooks
+  const [isMoved, setIsMoved] = useState(false);
+  const rowRef = useRef<HTMLDivElement>(null);
+
+  // Defining the handler of clicks on slide buttons
   const handleClick = (direction: string) => {
     setIsMoved(true);
     if (rowRef.current) {
@@ -25,6 +29,7 @@ export default function MovieRow({ title, items }: Props) {
     }
   };
 
+  // Returns a row of a specific category of movies/series to MainView.tsx in a Carousel
   return (
     <div className="h-auto space-y-0.5 md:space-y-2">
       <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition-colors duration-200 hover:text-white md:text-2xl">

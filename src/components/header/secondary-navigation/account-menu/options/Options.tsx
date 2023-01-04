@@ -1,5 +1,5 @@
 // Const
-import { profileList, optionList } from './option-list';
+import { optionList, profileList } from './option-list';
 
 // Props destructuring
 interface Props {
@@ -8,7 +8,6 @@ interface Props {
 
 // Account options main function
 export default function Options({ isActive }: Props) {
-
   // Mapping the profile list to a HTML List Element
   const mappedProfiles = profileList.map((profile) => (
     <li className="flex h-12 w-48 cursor-pointer hover:underline" key={profile.id}>

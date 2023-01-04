@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 // Notification menu main function
 export default function NotificationMenu() {
-
   // Setting initial values and declaring states
   const [isActive, setIsActive] = useState<boolean>(false);
   const [numberOfNotifications, setNumberOfNotifications] = useState<number>(notificationNumber);

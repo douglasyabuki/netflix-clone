@@ -8,10 +8,12 @@ export interface Props {
 
 // Notifications main function
 export default function Notifications({ isActive }: Props) {
-
   // Maps the notification list into a HTML List Element
   const mappedNotifications = notificationList.map((notification) => (
-    <li className="w-88 flex h-24 cursor-pointer self-center border-b-2 border-b-gray-300" key={notification.id}>
+    <li
+      className="w-88 flex h-24 cursor-pointer self-center border-b-2 border-b-gray-300"
+      key={notification.id}
+    >
       <a href="" className="flex">
         <img src={notification.image} className="h-16 w-28 self-center rounded"></img>
         <div className="self-center pl-4 text-left">
