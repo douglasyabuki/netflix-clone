@@ -2,6 +2,10 @@
 import MoreInfo from './buttons/MoreInfo';
 import PlayButton from './buttons/PlayButton';
 
+// Utils
+
+import { shuffleMatch } from '../../../utils/shuffle-match';
+
 // Props destructuring
 export interface Props {
   onBoard: any;
@@ -27,9 +31,9 @@ export default function MainBoard({ onBoard }: Props) {
             {onBoard.name}
           </h1>
           <div className="hidden gap-10 text-xs lg:flex lg:text-4xl lg:font-bold ">
-            <h2 className="text-green-700">{Math.round(onBoard.vote_average * 100) / 100}</h2>
+            <h2 className="text-green-700">{shuffleMatch()}</h2>
             <h2>{firstDate.getFullYear()}</h2>
-            <h2>{onBoard.number_of_seasons}</h2>
+            <h2>{onBoard.number_of_seasons>1? `${onBoard.number_of_seasons} seasons` : `${onBoard.number_of_seasons} season`}</h2>
           </div>
           <h2 className="py-4 text-xsmallest opacity-90 xs:text-xsmaller sm:text-sm lg:text-2xl">
             {onBoard.overview}

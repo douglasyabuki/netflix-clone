@@ -1,3 +1,6 @@
+// Const
+import { bannedOriginalsIds } from './banned-ids/banned-originals-ids';
+
 // Components
 import MainBoard from './main-board/MainBoard';
 import MovieRow from './movie-row/MovieRow';
@@ -21,19 +24,19 @@ export default function MainView() {
 
     // Sets the state of the movie rows
     let list = await getHomeList();
-    setMovieList(list);
-    console.log(list);
-
-    // Originally would random any number between originals.results range
     let originals = list.filter((item) => item.slug === 'originals');
+    setMovieList(list);
 
-    // Since the API is incomplete, it is safer to display only the 3 main original series
-    let originalChosen = shuffleNumber(3);
-    let chosenId = originals[0].items.results[originalChosen].id;
+    // Since there is a bad fetched item, it will be filtered from fetched original series
+    let alteredOriginals = originals[0].items.results.filter(result => !bannedOriginalsIds.includes(result.id));
+    let originalChosen = shuffleNumber(alteredOriginals.length);
+    let chosenId = alteredOriginals[originalChosen].id;
 
     // Fetching details to be treated by MainBoard.tsx
     let chosen = await getDetails(chosenId);
     setOnBoard(chosen);
+    console.log(chosenId)
+    console.log(chosen);
   };
 
   // Triggers the fetch and state functions as soon as the page loads
@@ -49,8 +52,8 @@ export default function MainView() {
       </div>
       <div className="group relative -top-4 z-20 items-center bg-gradient-to-b from-transparent-color to-netflix-black backdrop-blur-md lg:px-12">
         {movieList
-          ? movieList.map((item, key) => (
-              <MovieRow key={key} title={item.title} items={item.items}></MovieRow>
+          ? movieList.map((item, id) => (
+              <MovieRow key={id} title={item.title} items={item.items}></MovieRow>
             ))
           : null}
       </div>

@@ -43,7 +43,7 @@ export default function MovieRow({ title, items }: Props) {
           className="flex items-center space-x-0.5 overflow-x-scroll xs-max-w-[300px] xs:scrollbar-hide sm:max-w-[600px] md:max-w-6xl md:space-x-2.5 md:p-2 lg:max-w-[1000px] xl:max-w-[1200px] 2xl:max-w-[1500px] 3xl:max-w-[1900px] 4xl:max-w-full"
         >
           {items.results.map((item) => (
-            <MovieCard item={item}></MovieCard>
+            <MovieCard item={item} key={item.id}></MovieCard>
           ))}
         </div>
       </div>

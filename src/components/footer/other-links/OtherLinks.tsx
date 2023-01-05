@@ -13,8 +13,8 @@ export default function OtherLinks({ list }: Props) {
     <div className="columns-2 space-y-2 px-4 text-justify md:columns-4">
       {list
         ? list.map((item) => (
-            <div>
-              <a className="text-sm hover:underline" href={item.href} key={item.id}>
+            <div key={item.id}>
+              <a className="text-sm hover:underline" href={item.href}>
                 {item.title}
               </a>
             </div>
