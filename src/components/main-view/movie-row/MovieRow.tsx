@@ -35,12 +35,12 @@ export default function MovieRow({ title, items }: Props) {
       <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition-colors duration-200 hover:text-white md:text-2xl">
         {title}
       </h2>
-      <div className="group container relative px-4">
+      <div className="group relative px-4">
         <SlideLeft onClickHandler={() => handleClick('left')}></SlideLeft>
         <SlideRight onClickHandler={() => handleClick('right')}></SlideRight>
         <div
           ref={rowRef}
-          className="flex items-center space-x-0.5 overflow-x-scroll xs-max-w-[300px] xs:scrollbar-hide sm:max-w-[600px] md:max-w-6xl md:space-x-2.5 md:p-2 lg:max-w-[1000px] xl:max-w-[1200px] 2xl:max-w-[1500px] 3xl:max-w-[1900px] 4xl:max-w-full"
+          className="flex overflow-x-scroll container xs:scrollbar-hide   md:p-2  "
         >
           {items.results.map((item) => (
             <MovieCard item={item} key={item.id}></MovieCard>
