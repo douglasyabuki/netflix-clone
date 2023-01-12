@@ -1,10 +1,10 @@
 // Components
 import MovieCard from './movie-card/MovieCard';
 import SlideLeft from './slide-left/SlideLeft';
+import SlideRight from './slide-right/SlideRight';
 
 // Hooks
 import { useRef, useState } from 'react';
-import SlideRight from './slide-right/SlideRight';
 
 // Props destructuring
 export interface Props {
